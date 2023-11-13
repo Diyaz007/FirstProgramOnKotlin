@@ -29,8 +29,16 @@ class LoginActivity : AppCompatActivity() {
         val signUpBtn: Button = findViewById(R.id.signUpBtn)
         val signInText: TextView = findViewById(R.id.signUpText)
         signInText.setOnClickListener {
-            val intent = Intent(this, SingActivity::class.java)
-            startActivity(intent)
+            val name = signUpName.text.toString()
+            val email = signUpEmail.text.toString()
+            val password = signUpPassword.text.toString()
+            val cpassword = signUpCPassword.text.toString()
+            if (!name.isEmpty() || !email.isEmpty() || !password.isEmpty() || !cpassword.isEmpty()) {
+                signInText.error = "Завершите регистрацию"
+            } else {
+                val intent = Intent(this, SingActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         signUpBtn.setOnClickListener {
@@ -71,7 +79,7 @@ class LoginActivity : AppCompatActivity() {
                         val users: Users = Users(name, email, auth.currentUser!!.uid)
                         database.setValue(users).addOnCompleteListener {
                             if (it.isSuccessful) {
-                                val intent = Intent(this, Main_Window_tyActivi::class.java)
+                                val intent = Intent(this, Main_Window_Activity::class.java)
                                 startActivity(intent)
                             } else {
                                 Toast.makeText(
