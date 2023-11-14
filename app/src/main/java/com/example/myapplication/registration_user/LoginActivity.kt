@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
             val password = signUpPassword.text.toString()
             val cpassword = signUpCPassword.text.toString()
             if (!name.isEmpty() || !email.isEmpty() || !password.isEmpty() || !cpassword.isEmpty()) {
-                signInText.error = "Завершите регистрацию"
+                signInText.error = "Complete the registration"
             } else {
                 val intent = Intent(this, SingActivity::class.java)
                 startActivity(intent)
@@ -48,28 +48,28 @@ class LoginActivity : AppCompatActivity() {
             val cpassword = signUpCPassword.text.toString()
             if (name.isEmpty() || email.isEmpty() || password.isEmpty() || cpassword.isEmpty()) {
                 if (name.isEmpty()) {
-                    signUpName.error = "Введите свое имя"
+                    signUpName.error = "Enter your name"
                 }
                 if (email.isEmpty()) {
-                    signUpEmail.error = "Введите коректно email адрес"
+                    signUpEmail.error = "Enter the correct email address"
                 }
                 if (password.isEmpty()) {
-                    signUpPassword.error = "Пароль не должен быть пустым"
+                    signUpPassword.error = "The password must not be empty"
                 }
                 if (cpassword.isEmpty()) {
-                    signUpCPassword.error = "Пароли не совпадают"
+                    signUpCPassword.error = "Passwords don't match"
                 }
-                Toast.makeText(this, "Что то пошло не так", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show()
             } else if (!email.matches(emailPattern.toRegex())) {
-                signUpEmail.error = "Не корестный email адрес"
+                signUpEmail.error = "Incorrect email address"
             } else if (password.length < 6) {
-                signUpPassword.error = "Пароль должен быть больше 6 символов"
-                Toast.makeText(this, "Пароль должен быть больше 6 символов", Toast.LENGTH_LONG)
+                signUpPassword.error = "The password must be more than 6 characters"
+                Toast.makeText(this, "The password must be more than 6 characters", Toast.LENGTH_LONG)
                     .show()
 
             } else if (password != cpassword) {
-                signUpCPassword.error = "Пароль не совпадает"
-                Toast.makeText(this, "Пароль не совпадает", Toast.LENGTH_LONG).show()
+                signUpCPassword.error = "The password doesn't match"
+                Toast.makeText(this, "The password doesn't match", Toast.LENGTH_LONG).show()
 
             } else {
                 auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
@@ -84,7 +84,7 @@ class LoginActivity : AppCompatActivity() {
                             } else {
                                 Toast.makeText(
                                     this,
-                                    "Что то пошло не так ,попробуйте снова",
+                                    "Something went wrong, try again",
                                     Toast.LENGTH_LONG
                                 ).show()
                             }

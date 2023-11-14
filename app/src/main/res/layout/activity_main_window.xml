@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="You are register"
+        android:text="It is profile page"
         android:textColor="#8E00CC"
         android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -20,7 +20,16 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="                 REGISTRATION"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+            </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -89,14 +98,15 @@
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"/>
             </LinearLayout>
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/signUpBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="#FFFFFF"
                 android:text="Register"
-                android:textColor="#7604D6"
-                android:background="#FFFFFF"/>
+                android:textColor="#7604D6" />
             <TextView
                 android:id="@+id/signUpText"
                 android:layout_width="wrap_content"
